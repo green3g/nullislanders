@@ -1,0 +1,121 @@
+:root {
+  --main-theme-color: #1defaf;
+  --main-typeface-color: #333;
+  --light-typeface-color: #999;
+}
+
+body {
+  padding: 10px 40px;
+  color: var(--main-typeface-color);
+}
+
+nav {
+  height: 30px;
+  width: 90vw;
+  background: var(--main-theme-color);
+  display: grid;
+  grid-template-columns: 130px auto 50px;
+  grid-template-rows: 30px;
+}
+
+footer {
+  height: 90px;
+  margin-top: 15px;
+  width: 90vw;
+  border-top: 5px solid var(--main-theme-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a,
+a:link,
+a:visited,
+a:active {
+  color: var(--main-typeface-color);
+  text-decoration: none;
+  user-select: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.nav-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+}
+
+.nav-login {
+  display: flex;
+  align-items: center;
+}
+
+ol.articles-list {
+  list-style: none;
+  counter-reset: listNumbering;
+}
+
+li.articles-list__article {
+  font-size: 12px;
+  counter-increment: listNumbering;
+  display: flex;
+  flex-direction: row;
+}
+
+li.articles-list__article:before {
+  content: counter(listNumbering);
+  color: var(--light-typeface-color);
+  font-size: 18px;
+  margin-right: 9px;
+}
+
+.article-link {
+  display: flex;
+  flex-direction: row;
+}
+
+.article-link__main {
+  font-size: 18px;
+}
+
+.article-link__home {
+  color: var(--light-typeface-color);
+  font-size: 15px;
+  margin-left: 4px;
+  margin-top: 3px;
+  vertical-align: middle;
+}
+
+.nav-items ul {
+  list-style-type: none;
+  margin-left: -20px;
+}
+
+.nav-items ul li {
+  display: inline;
+}
+
+.nav-items ul li:not(:last-child)::after {
+  content: " | ";
+}
+
+.nav-title__icon {
+  background: url("https://cdn.brianbancroft.io/images/nullislanders/map_marker.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: 5px;
+
+  width: 18px;
+  height: 26px;
+}
+
+.nav-title__title {
+  margin-left: 5px;
+}

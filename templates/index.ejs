@@ -1,59 +1,46 @@
-<main>
-  <nav>
-    <div class="nav-title">
-      <div class="nav-title__icon"></div>
-      <div class="nav-title__title">nullislanders</div>
-    </div>
-    <div class="nav-items">
-      <ul>
-        <li><a href="#">new</a></li>
-        <li><a href="#">show</a></li>
-        <li><a href="#">ask</a></li>
-        <li><a href="#">jobs</a></li>
-        <li><a href="#">submit</a></li>
-        <li><a href="#">#gischat</a></li>
-        <li><a href="#">slack</a></li>
-      </ul>
-    </div>
-    <div class="nav-login"><a href="#">login</a></div>
-  </nav>
-  <section class="articles">
-    <ol class="articles-list">
-      <li class="articles-list__article">
-        <div>
-          <div class="article-link">
-            <div class="article-link__main">The Shapefile is the Best Format</div>
-            <div class="article-link__home">(esri.com)</div>
-          </div>
-          <div class="article-subtitle">
-            123 points by
-            <a href="#">shapefile</a>
-            <a href="#">10 hours ago</a>
-            |
-            <a href="#">hide</a>
-            |
-            <a href="#">12 comments</a>
-          </div>
-        </div>
-      </li>
+<!DOCTYPE html>
+<html lang="en">
 
-    </ol>
-    <div class="next-articles-link"><a href="#">more</a></div>
-  </section>
+<head>
+  <% include ./partials/head %>
+</head>
 
+<body class="container">
+
+  <header>
+    <% include ./partials/header %>
+  </header>
+
+  <main>
+    <section class="articles">
+      <ol class="articles-list">
+        <li class="articles-list__article">
+          <div>
+            <div class="article-link">
+              <div class="article-link__main">The Shapefile is the Best Format</div>
+              <div class="article-link__home">(esri.com)</div>
+            </div>
+            <div class="article-subtitle">
+              123 points by
+              <a href="#">shapefile</a>
+              <a href="#">10 hours ago</a>
+              |
+              <a href="#">hide</a>
+              |
+              <a href="#">12 comments</a>
+            </div>
+          </div>
+        </li>
+
+      </ol>
+      <div class="next-articles-link"><a href="#">more</a></div>
+    </section>
+  </main>
 
   <footer>
-    <div class="footer-links-container">
-      <div class="nav-items">
-        <ul>
-          <li><a href="#">Guidelines</a></li>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Security</a></li>
-          <li><a href="#">Lists</a></li>
-          <li><a href="#">Legal</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-    </div>
+    <% include ./partials/footer %>
   </footer>
-</main>
+
+</body>
+
+</html>

@@ -33,11 +33,11 @@ exports.create = async ({ uri, body, user_id, post_id, host_id }) => {
       user_id,
       host_id
     ) VALUES (
-      ${uri},
-      ${body},
-      ${undefined},
-      ${1},
-      ${1}
+      '${uri}',
+      '${body}',
+      ${"NULL"},
+      ${user_id},
+      ${host_id}
     )
   `;
 

@@ -23,3 +23,25 @@ exports.all = async () => {
   const { rows: records } = queryResponse;
   return records;
 };
+
+exports.create = async ({ uri, body, user_id, post_id, host_id }) => {
+  const createNewQuery = `
+    INSERT INTO posts(
+      uri,
+      body,
+      post_id,
+      user_id,
+      host_id
+    ) VALUES (
+      ${uri},
+      ${body},
+      ${undefined},
+      ${1},
+      ${1}
+    )
+  `;
+
+  const queryResponse = await pool.query(createNewQuery);
+  const { rows: record } = queryResponse;
+  return record;
+};

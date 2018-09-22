@@ -15,32 +15,11 @@
     <section class="articles">
       <ol class="articles-list">
         <% for (var i = 0; i < posts.length; i++) { %>
-        <li class="articles-list__article">
-          <div>
-            <div class="article-link">
-              <div class="article-link__main">
-                <a href="<%= posts[i].uri %>">
-                  <%= posts[i].body %>
-                </a>
-              </div>
-              <div class="article-link__home">(
-                <%= posts[i].host_uri %>)</div>
-            </div>
-            <div class="article-subtitle">
-              123 points by
-              <a href="#">
-                <%= posts[i].username %></a>
-              <a href="#">10 hours ago</a>
-              |
-              <a href="#">hide</a>
-              |
-              <a href="#">12 comments</a>
-            </div>
-          </div>
-        </li>
+        <%- include('./partials/frontpage-link', {post: posts[i]}); %>
         <% } %>
 
       </ol>
+      <!-- , {post: posts[i]} -->
       <div class="next-articles-link"><a href="#">more</a></div>
     </section>
   </main>

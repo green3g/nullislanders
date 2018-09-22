@@ -7,18 +7,21 @@
         </a>
       </div>
       <div class="article-link__home">
-        (<%= post.host_uri %>)
+        (
+        <%= post.host_uri %>)
       </div>
     </div>
     <div class="article-subtitle">
       123 points by
       <a href="#">
         <%= post.username %></a>
-        <a href="#"><%= post.created_at %></a>
-        |
-        <a href="#">report</a>
-        |
-        <a href="#"><%= post.number_comments %> comments</a>
+      <a href="#">
+        <%= post.created_at %></a>
+      |
+      <a href="#">report</a>
+      |
+      <a href="/posts/<%= post.id %>/comments">
+        <%= post.number_comments %> comments</a>
     </div>
   </div>
 </li>

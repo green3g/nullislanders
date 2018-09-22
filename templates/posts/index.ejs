@@ -2,20 +2,20 @@
 <html lang="en">
 
 <head>
-  <% include ./partials/head %>
+  <% include ../partials/head %>
 </head>
 
 <body class="container">
 
   <header>
-    <% include ./partials/header %>
+    <% include ../partials/header %>
   </header>
 
   <main>
     <section class="articles">
       <ol class="articles-list">
         <% posts.map(post => { %>
-          <%- include('./partials/frontpage-link', {post: post}) %>
+        <%- include('./partials/single-post', {post: post}) %>
         <% }) %>
       </ol>
       <div class="next-articles-link"><a href="#">more</a></div>
@@ -23,7 +23,7 @@
   </main>
 
   <footer>
-    <% include ./partials/footer %>
+    <% include ../partials/footer %>
   </footer>
 
 </body>

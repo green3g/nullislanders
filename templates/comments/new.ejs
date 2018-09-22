@@ -2,18 +2,18 @@
 <html lang="en">
 
 <head>
-  <% include ./partials/head %>
+  <% include ../partials/head %>
 </head>
 
 <body class="container">
 
   <header>
-    <% include ./partials/header-submit %>
+    <% include ../partials/header-submit %>
   </header>
 
   <main>
     <section class="submit">
-      <form name="create-post" method="POST" action="/create">
+      <form name="create-post" method="POST" action="posts/<%= postId %>/comment/create">
         title:
         <input type="text" name="body"><br>
         url:
@@ -27,7 +27,7 @@
 
 
   <footer>
-    <% include ./partials/footer %>
+    <% include ../partials/footer %>
   </footer>
 
 </body>

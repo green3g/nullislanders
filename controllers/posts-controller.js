@@ -2,10 +2,10 @@ const { Post } = require("../models");
 
 exports.index = async (req, res) => {
   const posts = await Post.all();
-  res.render("index", { posts });
+  res.render("posts/index", { posts });
 };
 
-exports.new = (req, res) => res.render("new");
+exports.new = (req, res) => res.render("posts/new");
 
 exports.create = async (req, res) => {
   req.body["user_id"] = 1;

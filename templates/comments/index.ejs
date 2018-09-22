@@ -1,3 +1,51 @@
-<h1>Hello comments for post
-  <%= postId %>
-</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body class="container">
+
+  <header>
+    <% include ../partials/header %>
+  </header>
+
+  <main>
+    <section class="articles">
+      <ul class="comments-list">
+        <% posts.map(post => { %>
+        <li class="comments-list__article">
+          <div>
+            <div class="article-link">
+              <div class="article-link__main">
+                <%= post.body %>
+              </div>
+              <div class="article-link__home">
+              </div>
+            </div>
+            <div class="article-subtitle">
+              123 points by
+              <a href="#">
+                <%= post.username %></a>
+              <a href="#">
+                <%= post.created_at %></a>
+              |
+              <a href="#">report</a>
+
+            </div>
+          </div>
+        </li>
+        <% }) %>
+      </ul>
+      <div class="next-articles-link"><a href="#">more</a></div>
+    </section>
+  </main>
+
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+
+</body>
+
+</html>

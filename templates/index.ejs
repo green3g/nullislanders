@@ -14,12 +14,10 @@
   <main>
     <section class="articles">
       <ol class="articles-list">
-        <% for (var i = 0; i < posts.length; i++) { %>
-        <%- include('./partials/frontpage-link', {post: posts[i]}); %>
-        <% } %>
-
+        <% posts.map(post => { %>
+          <%- include('./partials/frontpage-link', {post: post}) %>
+        <% }) %>
       </ol>
-      <!-- , {post: posts[i]} -->
       <div class="next-articles-link"><a href="#">more</a></div>
     </section>
   </main>

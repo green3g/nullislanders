@@ -6,7 +6,7 @@
   "scripts": {
     "prod": "node ./start.js",
     "watch": "nodemon ./start.js --ignore public/",
-    "start": "npm run watch",
+    "start": "npm run watch"
   },
   "author": "Brian Bancroft",
   "license": "MIT",

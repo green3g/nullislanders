@@ -9,7 +9,6 @@ exports.new = (req, res) => res.render("comments/new", { postId: req.params.id }
 
 exports.create = async (req, res) => {
   req.body["user_id"] = 1;
-  req.body["host_id"] = 1;
-  await Post.create(req.body);
-  res.redirect("comments/index");
+  await Comment.create(req.body);
+  res.redirect(`/posts/${req.params.id}/comments/`);
 };

@@ -13,11 +13,10 @@
 
   <main>
     <section class="submit">
-      <form name="create-post" method="POST" action="posts/<%= postId %>/comment/create">
-        title:
-        <input type="text" name="body"><br>
-        url:
-        <input type="text" name="uri"><br>
+      <form name="create-post" method="POST" action="../../../posts/<%= postId %>/comments/create" id="commentForm">
+        Comment:
+        <textarea form="commentForm" type="textarea" name="body"></textarea><br>
+        <input type="hidden" name="post_id" value=<%=postId %> />
         <br>
 
         <input type="submit" value="Submit">

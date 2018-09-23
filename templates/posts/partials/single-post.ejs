@@ -20,8 +20,13 @@
       |
       <a href="#">report</a>
       |
-      <a href="/posts/<%= post.id %>/comments">
-        <%= post.number_comments %> comments</a>
+      <% if (post.number_comments == 0) { %>
+      <a href="/posts/<%= post.id %>/comments/new">0 comments</a>
+      <% } else { %>
+      <a href="/posts/<%= post.id %>/comments/">
+        <%= post.number_comments %> comments
+      </a>
+      <% } %>
     </div>
   </div>
 </li>

@@ -30,12 +30,24 @@ exports.all = async ({ postId } = {}) => {
 };
 
 exports.create = async (params) => {
-  return {
-    status: 1,
-  }
-  // const createNewQuery = create(params);
-  // const queryResponse = await pool.query(createNewQuery);
-  // const { rows: post } = queryResponse;
+  const { body, post_id, host_id } = params;
 
-  // return post;
+  // TODO: Use session for user_id
+  const user_id = 1;
+
+  const createNewQuery = `
+    INSERT INTO posts(
+      uri,
+      body,
+      post_id,
+      user_id
+    ) VALUES(
+      NULL,
+      '${body}',
+      ${post_id},
+      ${user_id}
+    )
+  `
+  const queryResponse = await pool.query(createNewQuery);
+  const { rows: post } = queryResponse;
 };

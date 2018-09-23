@@ -1,6 +1,6 @@
 ## Null Islanders
 
-A hacker-news clone for the geogaphy nerds out there. Made with love. Work in Progress
+A hacker-news clone for the geogaphy nerds out there. Starter scooped from Wes Bos's [Learn Node Course](https://github.com/wesbos/Learn-Node). Made with love. Work in Progress
 
 ## TODO:
 
@@ -9,9 +9,9 @@ A hacker-news clone for the geogaphy nerds out there. Made with love. Work in Pr
 - [ ] Logins
 - [ ] Log outs
 - [ ] Saving sessions
-- [ ] Create new posts
+- [x] Create new posts
 - [ ] Update Posts
-- [ ] Comment on Posts
+- [x] Comment on Posts
 - [ ] Moderate Posts
 - [ ] Flag Posts
 - [ ] Upvote on Posts

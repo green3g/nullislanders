@@ -1,4 +1,8 @@
 module.exports = {
+  parserOptions: {
+    ecmaVersion: 2017,
+  },
+
   rules: {
     'no-console': 'off',
     'linebreak-style': ['error', 'unix'],
@@ -9,8 +13,8 @@ module.exports = {
       'error',
       {
         ObjectExpression: { multiline: true },
-        ObjectPattern: { multiline: true }
-      }
+        ObjectPattern: { multiline: true },
+      },
     ],
     'no-mixed-operators': [
       'error',
@@ -20,19 +24,15 @@ module.exports = {
           ['&', '|', '^', '~', '<<', '>>', '>>>'],
           ['==', '!=', '===', '!==', '>', '>=', '<', '<='],
           ['&&', '||'],
-          ['in', 'instanceof']
+          ['in', 'instanceof'],
         ],
-        allowSamePrecedence: true
-      }
+        allowSamePrecedence: true,
+      },
     ],
     'no-restricted-syntax': 'off',
     'no-underscore-dangle': 'off',
     'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
-    'import/no-extraneous-dependencies': [
-      'error',
-      { devDependencies: ['**/*.test.js', '**/*.spec.js', '**/setup-jest.js'] }
-    ],
-
+    'comma-dangle': ['error', 'always'],
     'no-shadow': 'off',
     'max-len': [
       'error',
@@ -40,8 +40,8 @@ module.exports = {
         code: 100,
         tabWidth: 2,
         ignoreStrings: false,
-        ignoreTemplateLiterals: false
-      }
+        ignoreTemplateLiterals: false,
+      },
     ],
     'no-param-reassign': ['error', { props: false }],
     radix: ['error', 'as-needed'],
@@ -54,17 +54,17 @@ module.exports = {
       {
         VariableDeclarator: {
           array: false,
-          object: true
+          object: true,
         },
         AssignmentExpression: {
           array: false,
-          object: false
-        }
+          object: false,
+        },
       },
       {
-        enforceForRenamedProperties: false
-      }
+        enforceForRenamedProperties: false,
+      },
     ],
-    'consistent-return': 'off'
-  }
+    'consistent-return': 'off',
+  },
 }

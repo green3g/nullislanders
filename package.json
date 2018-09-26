@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prod": "node ./start.js",
-    "watch": "nodemon ./start.js --ignore public/",
+    "watch": "node ./node_modules/nodemon/bin/nodemon.js ./start.js",
     "start": "npm run watch"
   },
   "author": "Brian Bancroft",

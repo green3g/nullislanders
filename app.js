@@ -10,7 +10,13 @@ const expressValidator = require("express-validator");
 const routes = require("./routes");
 const helpers = require("./helpers");
 const errorHandlers = require("./handlers/errorHandlers");
-
+var flash = require('connect-flash');
+var passport = require('passport');
+var request = require('request');
+var session = require('express-session');
+var app = express();
+var bodyParser = require('body-parser');
+var path = require('path');
 // create our Express app
 const app = express();
 
@@ -24,6 +30,10 @@ app.use(express.static(path.join(__dirname, "public")));
 // Takes the raw requests and turns them into usable properties on req.body
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 
 // Exposes a bunch of methods for validating data. Used heavily on userController.validateRegister
 app.use(expressValidator());

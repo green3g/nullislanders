@@ -13,6 +13,7 @@ exports.all = async () => {
 
 exports.find = async params => {
   const { id, } = params
+  console.log('find triggered. Id: ', id)
   const findQuery = find(id)
   const queryResponse = await pool.query(findQuery)
   const { rows: user, } = queryResponse

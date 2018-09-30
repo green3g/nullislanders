@@ -5,6 +5,11 @@ exports.index = async (req, res) => {
   res.render('users/index', { users, })
 }
 
+exports.show = async (req, res) => {
+  const user = await User.find(req.params)
+  res.render('users/show', { user, })
+}
+
 exports.new = (req, res) => res.render('users/new')
 
 exports.create = async (req, res) => {

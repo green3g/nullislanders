@@ -4,7 +4,6 @@ const path = require('path')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const passport = require('passport')
-const promisify = require('es6-promisify')
 const flash = require('connect-flash')
 const expressValidator = require('express-validator')
 const routes = require('./routes')
@@ -48,7 +47,7 @@ app.use(
 app.use(passport.initialize())
 app.use(passport.session())
 
-// The flash middleware let's us use req.flash('error', 'Shit!'), which will then pass that message to the next page the user requests
+// The flash middleware let's us use req.flash('error', 'Shit!')
 app.use(flash())
 
 // pass variables to our templates + all requests
@@ -60,9 +59,8 @@ app.use((req, res, next) => {
   next()
 })
 
-// promisify some callback based APIs
-app.use((req, res, next) => {
-  req.login = promisify(req.login, req)
+app.use(async (req, res, next) => {
+  req.login = await (req.login, req)
   next()
 })
 

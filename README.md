@@ -20,6 +20,11 @@ A hacker-news clone for the geogaphy nerds out there. Starter scooped from Wes B
 - [ ] Warn users
 - [ ] Ban Users
 - [ ] Message Users
+- [ ] Move to GraphQL Server (yoga)
+- [ ] Build Knex Migrations for database models
+- [ ] Migrate from Postgres to MySQL
+- [ ] Host DB on [serverless Aurora](https://aws.amazon.com/rds/aurora/serverless/)
+- [ ] Build deploy pipeline with serverless to have app on Lambda
 
 ### Documentation
 

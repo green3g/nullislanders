@@ -1,7 +1,9 @@
 exports.new = (req, res) => {
-  console.log('new session')
+  res.render('sessions/new')
 }
 
 exports.create = (req, res) => {
   console.log('create session')
+  console.log('Params -> ', req.body)
+  res.render('sessions/new')
 }

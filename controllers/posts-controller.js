@@ -1,8 +1,8 @@
-const { Post } = require('../models')
+const { Post, } = require('../models')
 
 exports.index = async (req, res) => {
   const posts = await Post.all()
-  res.render('posts/index', { posts })
+  res.render('posts/index', { posts, })
 }
 
 exports.new = (req, res) => res.render('posts/new')

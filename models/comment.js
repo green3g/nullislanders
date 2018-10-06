@@ -1,11 +1,11 @@
-const pg = require("pg");
-const { databaseConfig } = require("../helpers");
+const pg = require('pg')
+const { databaseConfig, } = require('../helpers/database')
 const timeAgo = require('node-time-ago')
 
-const pool = new pg.Pool(databaseConfig);
-const { all, create } = require('./comment-queries')
+const pool = new pg.Pool(databaseConfig)
+const { all, create, } = require('./comment-queries')
 
-exports.all = async ({ postId } = {}) => {
+exports.all = async ({ postId, } = {}) => {
   const selectAllQuery = `
     SELECT
       posts.id,
@@ -23,17 +23,17 @@ exports.all = async ({ postId } = {}) => {
     WHERE
       posts.post_id = ${postId}
   `
-  const queryResponse = await pool.query(selectAllQuery);
-  const { rows: posts } = queryResponse;
-  posts.map(i => i.created_at = timeAgo(i.created_at));
-  return posts;
-};
+  const queryResponse = await pool.query(selectAllQuery)
+  const { rows: posts, } = queryResponse
+  posts.map(i => (i.created_at = timeAgo(i.created_at)))
+  return posts
+}
 
-exports.create = async (params) => {
-  const { body, post_id, host_id } = params;
+exports.create = async params => {
+  const { body, post_id, host_id, } = params
 
   // TODO: Use session for user_id
-  const user_id = 1;
+  const user_id = 1
 
   const createNewQuery = `
     INSERT INTO posts(
@@ -48,6 +48,6 @@ exports.create = async (params) => {
       ${user_id}
     )
   `
-  const queryResponse = await pool.query(createNewQuery);
-  const { rows: post } = queryResponse;
-};
+  const queryResponse = await pool.query(createNewQuery)
+  const { rows: post, } = queryResponse
+}

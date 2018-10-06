@@ -1,4 +1,4 @@
-module.exports = ({ user, password, email, } = {}) => `
+module.exports = ({ username, password, email, } = {}) => `
 INSERT INTO users(
   username,
   password_digest,

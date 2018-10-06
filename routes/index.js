@@ -21,7 +21,7 @@ router.post('/posts/:id/comments/create', commentsController.create)
 
 router.get('/users', usersController.index)
 router.get('/users/new', usersController.new)
-// router.post('/users/create', usersController.create)
+router.post('/users/create', usersController.create)
 router.get('/users/:id', usersController.show)
 // router.get('/users/:id/edit', usersController.edit)
 // router.put('/users/:id/update', usersController.update)

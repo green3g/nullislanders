@@ -1,5 +1,5 @@
 const pg = require('pg')
-const { databaseConfig, } = require('../helpers')
+const { databaseConfig, } = require('../helpers/database')
 const timeAgo = require('node-time-ago')
 
 const pool = new pg.Pool(databaseConfig)

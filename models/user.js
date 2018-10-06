@@ -1,17 +1,9 @@
 const pg = require('pg')
 const { databaseConfig, } = require('../helpers/database')
 const pool = new pg.Pool(databaseConfig)
-const { encrypt, compare, } = require('../helpers/bcrypt')
+const { encrypt, } = require('../helpers/bcrypt')
 
-const {
-  all,
-  find,
-  findByUsername,
-  findByEmail,
-  create,
-  update,
-  destroy,
-} = require('./user-queries')
+const { all, find, findBy, create, update, destroy, } = require('./user-queries')
 
 // TODO: Restrict access to all functions to admin level or user
 exports.all = async () => {
@@ -31,15 +23,11 @@ exports.find = async params => {
 }
 
 exports.findBy = async params => {
-  const { username, email, } = params
+  const { username, } = params
   let queryResponse
-  if (username) {
-    queryResponse = await pool.query(findByUsername(email))
-  } else if (email) {
-    queryResponse = await pool.query(findByEmail(email))
-  } else {
-    console.log('TODO: Give 400 error for lack of params')
-  }
+  queryResponse = await pool.query(findBy(username))
+
+  return queryResponse ? queryResponse['rows'][0] : null
 }
 
 exports.create = async params => {

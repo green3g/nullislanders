@@ -1,7 +1,8 @@
 const pg = require('pg')
 const { databaseConfig, } = require('../helpers/database')
 const pool = new pg.Pool(databaseConfig)
-const bcrypt = require('bcrypt')
+const { encrypt, compare, } = require('../helpers/bcrypt')
+
 const {
   all,
   find,
@@ -11,10 +12,6 @@ const {
   update,
   destroy,
 } = require('./user-queries')
-
-// TODO: Replace default hash with environment variable
-const saltRounds = 10
-const salt = bcrypt.genSaltSync(saltRounds)
 
 // TODO: Restrict access to all functions to admin level or user
 exports.all = async () => {
@@ -48,7 +45,7 @@ exports.findBy = async params => {
 exports.create = async params => {
   console.log('Create called')
   const { username, email, } = params
-  const password = await bcrypt.hashSync(params.password, salt)
+  const password = await encrypt(params.password)
   const createQuery = create({ username, password, email, })
   await pool.query(createQuery)
   return true

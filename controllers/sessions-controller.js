@@ -2,7 +2,7 @@ const { User, } = require('../models')
 const { compare, } = require('../helpers/bcrypt')
 
 exports.new = (req, res) => {
-  res.render('sessions/new')
+  res.render('sessions/new', { expressFlash: null, })
 }
 
 exports.create = async (req, res) => {

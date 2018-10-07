@@ -23,7 +23,7 @@
 
 
       <% if (post.number_comments > 0) { %>
-      <%= post.number_comments %> comments
+      <a href="/posts<%= post.id %>"><%= post.number_comments %> comments</a>
       <% } else if (username) { %>
       <a href="/posts/<%= post.id %>/comments/new">comment</a>
       <% } else {%>

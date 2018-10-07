@@ -18,5 +18,9 @@
       <li><a href="https://thespatialcommunity.org">slack</a></li>
     </ul>
   </div>
+  <% if (email) { %>
+  <div class="nav-login"><a href="/logout">logout</a></div>
+  <% } else { %>
   <div class="nav-login"><a href="/login">login</a></div>
+  <% } %>
 </nav>

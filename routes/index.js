@@ -14,6 +14,8 @@ router.post('/create', postsController.create)
 
 router.get('/login', sessionsController.new)
 router.post('/login', sessionsController.create)
+router.get('/logout', sessionsController.destroy)
+router.post('/logout', sessionsController.destroy)
 
 router.get('/posts/:id/comments', commentsController.index)
 router.get('/posts/:id/comments/new', commentsController.new)

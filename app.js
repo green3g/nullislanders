@@ -40,6 +40,7 @@ app.use(
     key: process.env.KEY,
     resave: false,
     saveUninitialized: false,
+    cookie: { secure: false, },
   })
 )
 

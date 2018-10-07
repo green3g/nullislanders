@@ -9,15 +9,21 @@ exports.create = async (req, res) => {
   const { username, password, } = req.body
   // TODO: Presence check for username, password
   const user = await User.findBy({ username, })
-  console.log('Password -> ', password)
-  console.log('DB Password: ', user.password_digest)
-  const match = await compare(password, user.password_digest)
-  if (match) {
-    console.log('User found -> ', user)
-    console.log('User match -> ', match)
-  } else {
-    console.log('no match found')
+  if (!user) {
+    console.log('user not found')
+    res.render('sessions/new')
   }
-  console.log('match -> ', match)
-  res.render('sessions/new')
+  const match = await compare(password, user.password_digest)
+  if (!match) {
+    console.log('Incorrect password')
+    res.render('sessions/new')
+  }
+  req.session.username = user.username
+  req.session.email = user.email
+  res.redirect('/')
+}
+
+exports.destroy = async (req, res) => {
+  req.session.destroy()
+  res.redirect('/')
 }

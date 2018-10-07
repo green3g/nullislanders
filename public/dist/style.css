@@ -14,7 +14,7 @@ nav {
   width: 90vw;
   background: var(--main-theme-color);
   display: grid;
-  grid-template-columns: 130px auto 50px;
+  grid-template-columns: 130px 3fr 1fr;
   grid-template-rows: 30px;
 }
 

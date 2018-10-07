@@ -1,5 +1,7 @@
 # Null Islanders
 
+![image](https://user-images.githubusercontent.com/6225122/46587559-43513e80-ca5c-11e8-9216-fbbc7f7ea333.png)
+
 A hacker-news clone for the geogaphy nerds out there. Starter scooped from Wes Bos's [Learn Node Course](https://github.com/wesbos/Learn-Node). Made with ❤️ from Toronto. Work in Progress
 
 ### Setup

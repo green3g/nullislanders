@@ -4,7 +4,7 @@
 
 A hacker-news clone for the geogaphy nerds out there. Starter scooped from Wes Bos's [Learn Node Course](https://github.com/wesbos/Learn-Node). Made with ❤️ from Toronto. Work in Progress
 
-### Setup
+## Setup
 
 This app uses [knex](https://knexjs.org/) in order to run migrations for all the environments, and vanilla SQL for the rest. To get started, run the following:
 
@@ -23,9 +23,7 @@ There's a lot that still needs to be built before this thing can go live. This i
 - [x] Saving sessions
 - [x] Create new posts
 - [x] Comment on Posts
-- [x] Build Knex Migrations for database models
-- [ ] Build some seeds for an initial environment.
-- [ ] Migrate from Postgres to MySQL 5.6 (to enable serverless)
+- [ ] Generate hosts functionality from URL
 - [ ] Invite users mechanism
 - [ ] Request invite mechanism
 - [ ] Moderate Posts
@@ -34,11 +32,22 @@ There's a lot that still needs to be built before this thing can go live. This i
 - [ ] Comment on Comments
 - [ ] Ban Users
 - [ ] Message Users
+
+#### Configuration
+
+- [x] Build Knex Migrations for database models
+- [ ] Build some seeds for an initial environment.
+- [ ] Migrate from Postgres to MySQL 5.6 (to enable serverless)
 - [ ] Move to GraphQL Server (yoga)
 - [ ] Host DB on [serverless Aurora](https://aws.amazon.com/rds/aurora/serverless/)
 - [ ] Build deploy pipeline with serverless to have app on Lambda
 
-### Documentation
+#### Maintenance
+
+- [ ] API Integration tests
+- [ ] Helper Unit tests
+
+#### Documentation
 
 - [x] How to build from scratch
 - [ ] Deployment instructions

@@ -19,6 +19,7 @@ exports.create = async (req, res) => {
       req.flash('error', 'Incorrect password!')
       res.render('sessions/new', { expressFlash: req.flash('error'), })
     } else {
+      req.session.userID = user.id
       req.session.username = user.username
       req.session.email = user.email
       res.redirect('/')

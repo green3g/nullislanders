@@ -11,7 +11,7 @@ exports.new = (req, res) => res.render('posts/new')
 
 exports.create = async (req, res) => {
   // TODO: Stop hardcoding user and host id
-  req.body['user_id'] = 1
+  req.body['user_id'] = req.session.userID
   req.body['host_id'] = 1
   await Post.create(req.body)
   res.redirect('/')

@@ -7,20 +7,22 @@ exports.new = (req, res) => {
 
 exports.create = async (req, res) => {
   const { username, password, } = req.body
-  // TODO: Presence check for username, password
   const user = await User.findBy({ username, })
   if (!user) {
-    console.log('user not found')
+    console.log('User not found')
     res.render('sessions/new')
+  } else {
+    const match = await compare(password, user.password_digest)
+    if (!match) {
+      console.log('Incorrect password')
+      req.flash('error', 'Incorrect password!')
+      res.render('sessions/new')
+    } else {
+      req.session.username = user.username
+      req.session.email = user.email
+      res.redirect('/')
+    }
   }
-  const match = await compare(password, user.password_digest)
-  if (!match) {
-    console.log('Incorrect password')
-    res.render('sessions/new')
-  }
-  req.session.username = user.username
-  req.session.email = user.email
-  res.redirect('/')
 }
 
 exports.destroy = async (req, res) => {

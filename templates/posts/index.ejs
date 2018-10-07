@@ -15,7 +15,7 @@
     <section class="articles">
       <ol class="articles-list">
         <% posts.map(post => { %>
-        <%- include('./partials/single-post', {post: post, username: username}) %>
+        <%- include('./partials/single-post', {post, session}) %>
         <% }) %>
       </ol>
       <div class="next-articles-link"><a href="#">more</a></div>

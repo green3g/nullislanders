@@ -10,13 +10,14 @@ exports.create = async (req, res) => {
   const user = await User.findBy({ username, })
   if (!user) {
     console.log('User not found')
-    res.render('sessions/new')
+    req.flash('error', 'Username/Email not found!')
+    res.render('sessions/new', { expressFlash: req.flash('error'), })
   } else {
     const match = await compare(password, user.password_digest)
     if (!match) {
       console.log('Incorrect password')
       req.flash('error', 'Incorrect password!')
-      res.render('sessions/new')
+      res.render('sessions/new', { expressFlash: req.flash('error'), })
     } else {
       req.session.username = user.username
       req.session.email = user.email

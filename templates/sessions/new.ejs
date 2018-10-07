@@ -12,6 +12,11 @@
   </header>
 
   <main>
+    <% if ( expressFlash.length > 0 ) { %>
+    <p>Message:
+      <%= expressFlash %>
+    </p>
+    <% } %>
     <section class="submit">
       <form name="login" method="POST" action="/login">
         Username:

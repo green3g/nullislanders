@@ -23,9 +23,11 @@ There's a lot that still needs to be built before this thing can go live. This i
 - [x] Saving sessions
 - [x] Create new posts
 - [x] Comment on Posts
-- [ ] Generate hosts functionality from URL
-- [ ] Invite users mechanism
+- [ ] Generate hosts functionality from URL content
 - [ ] Request invite mechanism
+- [ ] Invite users mechanism
+- [ ] Send emails to invitees
+- [ ] Twitter bot for popular posts
 - [ ] Moderate Posts
 - [ ] Flag Posts
 - [ ] Upvote on Posts
@@ -36,11 +38,17 @@ There's a lot that still needs to be built before this thing can go live. This i
 #### Configuration
 
 - [x] Build Knex Migrations for database models
-- [ ] Build some seeds for an initial environment.
 - [ ] Migrate from Postgres to MySQL 5.6 (to enable serverless)
 - [ ] Move to GraphQL Server (yoga)
 - [ ] Host DB on [serverless Aurora](https://aws.amazon.com/rds/aurora/serverless/)
 - [ ] Build deploy pipeline with serverless to have app on Lambda
+
+#### Seeds
+
+- [ ] Build user types (admin, user, ...)
+- [ ] Build sample posts
+- [ ] Build sample users
+- [ ] Build faker factories with similar data
 
 #### Maintenance
 

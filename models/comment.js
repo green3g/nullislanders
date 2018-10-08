@@ -14,11 +14,7 @@ exports.all = async ({ postId, } = {}) => {
 }
 
 exports.create = async params => {
-  const { body, post_id, host_id, } = params
-
-  // TODO: Use session for user_id
-  const user_id = 1
-
+  const { body, post_id, host_id, user_id, } = params
   const createNewQuery = create(body, post_id, host_id, user_id)
   await pool.query(createNewQuery)
 }

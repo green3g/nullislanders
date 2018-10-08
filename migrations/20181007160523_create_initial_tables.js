@@ -15,7 +15,6 @@ exports.up = async knex => {
   await knex.schema.createTable('hosts', table => {
     table.increments('id').primary()
     table.string('host_uri')
-    table.string('host_name')
     table.timestamps()
   })
 

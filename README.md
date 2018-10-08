@@ -2,7 +2,7 @@
 
 ![image](https://user-images.githubusercontent.com/6225122/46587643-4567cd00-ca5d-11e8-8fa2-dedb885ea7a8.png)
 
-A hacker-news clone for the geogaphy nerds out there. Starter scooped from Wes Bos's [Learn Node Course](https://github.com/wesbos/Learn-Node). Made with ❤️ from Toronto. Work in Progress
+A hacker-news clone, that I'm specifically building for the geogaphy nerds out there. Starter scooped from Wes Bos's [Learn Node Course](https://github.com/wesbos/Learn-Node). Inspired by [Lobsters](https://github.com/lobsters/lobsters), which does the exact same thing on the Ruby on Rails platform [link](https://lobste.rs/)
 
 ## Setup
 

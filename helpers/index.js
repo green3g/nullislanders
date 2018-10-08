@@ -13,3 +13,10 @@ exports.icon = name => fs.readFileSync(`./public/images/icons/${name}.svg`)
 
 // Some details about the site
 exports.siteName = 'Nullislanders'
+
+// Capture the pure host of user-uri
+exports.regex = {
+  webHost: /^(https{0,1}:\/\/){0,1}(.+\.)*(.+\.[a-zA-Z]{2,})\/.*$/,
+  // eslint-disable-next-line
+  validURI: /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+(:[0-9]+)?|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/,
+}

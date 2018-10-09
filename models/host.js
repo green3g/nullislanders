@@ -8,19 +8,19 @@ exports.all = async () => {
   const selectAllQuery = all
   const queryResponse = await pool.query(selectAllQuery)
   const { rows: hosts, } = queryResponse
-  return posts
+  return hosts
 }
 
 exports.create = async params => {
   const createNewQuery = create(params)
   const queryResponse = await pool.query(createNewQuery)
   const { rows: host, } = queryResponse
-
-  return post
+  return host
 }
 
 exports.find = async params => {
   const findQuery = find(params)
-  const queryResponse = await.pool.query(findQuery)
+  const queryResponse = await pool.query(findQuery)
   const { rows: host, } = queryResponse
+  return host
 }

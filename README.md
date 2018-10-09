@@ -28,12 +28,29 @@ There's a lot that still needs to be built before this thing can go live. This i
 - [ ] Invite users mechanism
 - [ ] Send emails to invitees
 - [ ] Twitter bot for popular posts
+- [ ] Username limits
+- [ ] Password lengths
+- [ ] Error fields for users or posts
+- [ ] Prevent duplicate posts
 - [ ] Moderate Posts
 - [ ] Flag Posts
 - [ ] Upvote on Posts
 - [ ] Comment on Comments
 - [ ] Ban Users
 - [ ] Message Users
+- [ ] Measure new posts
+- [ ] Measure visits to frontpage
+- [ ] Measure visits to comments
+- [ ] Dataviz
+
+### Visual
+
+- [ ] Fixes to header style
+- [ ] Fixes to post-new style
+- [ ] Frontpage-mobile
+- [ ] Post-new mobile
+- [ ] Fixes to comments desktop
+- [ ] comments-mobile
 
 #### Configuration
 

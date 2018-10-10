@@ -3,6 +3,7 @@ const { databaseConfig, } = require('../helpers/database')
 
 const pool = new pg.Pool(databaseConfig)
 const { all, create, } = require('./host-queries')
+const { extractHost, } = require('../helpers')
 
 exports.all = async () => {
   const selectAllQuery = all
@@ -12,10 +13,12 @@ exports.all = async () => {
 }
 
 exports.create = async params => {
-  const createNewQuery = create(params)
+  const { uri, } = params
+  const host_uri = uri.match(extractHost)[3]
+  const createNewQuery = create({ host_uri, })
   const queryResponse = await pool.query(createNewQuery)
-  const { rows: host, } = queryResponse
-  return host
+  const { id, } = queryResponse[1].rows[0]
+  return id
 }
 
 exports.find = async params => {

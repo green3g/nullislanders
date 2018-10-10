@@ -1,4 +1,4 @@
-module.exports = ({ uri, body, user_id, post_id, host_id }) => `
+module.exports = ({ uri, body, user_id, post_id, host_id, }) => `
   INSERT INTO posts(
     uri,
     body,
@@ -8,7 +8,7 @@ module.exports = ({ uri, body, user_id, post_id, host_id }) => `
   ) VALUES (
     '${uri}',
     '${body}',
-    ${"NULL"},
+    ${'NULL'},
     ${user_id},
     ${host_id}
   )

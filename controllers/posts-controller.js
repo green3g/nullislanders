@@ -1,4 +1,4 @@
-const { Post, } = require('../models')
+const { Post, Host, } = require('../models')
 
 exports.index = async (req, res) => {
   const posts = await Post.all()
@@ -10,9 +10,9 @@ exports.index = async (req, res) => {
 exports.new = (req, res) => res.render('posts/new')
 
 exports.create = async (req, res) => {
-  // TODO: Stop hardcoding user and host id
+  // TODO: FILTER PARAMS FOR PROPER URI
   req.body['user_id'] = req.session.userID
-  req.body['host_id'] = 1
+  req.body['host_id'] = await Host.create(req.body)
   await Post.create(req.body)
   res.redirect('/')
 }

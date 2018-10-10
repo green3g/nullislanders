@@ -22,6 +22,7 @@ exports.find = async params => {
 }
 
 exports.create = async params => {
+  // TODO: FILTER OUT NON-URI's
   const createNewQuery = create(params)
   const queryResponse = await pool.query(createNewQuery)
   const { rows: post, } = queryResponse

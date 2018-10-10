@@ -19,7 +19,9 @@
         <%- include('./partials/single-comment', {comment, session}) %>
         <% }) %>
       </ul>
-      <div class="new-post-link"><a href="/posts/<%= postId %>/comments/new">comment</a></div>
+      <% if (session.username) { %>
+        <div class="new-post-link"><a href="/posts/<%= postId %>/comments/new">comment</a></div>
+      <% } %>
     </section>
   </main>
 

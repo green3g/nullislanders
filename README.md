@@ -23,9 +23,9 @@ There's a lot that still needs to be built before this thing can go live. This i
 - [x] Saving sessions
 - [x] Create new posts
 - [x] Comment on Posts
-- [ ] Generate hosts functionality from URL content
+- [x] Generate hosts functionality from URL content
 - [ ] Request invite mechanism
-- [ ] Infhhvite users mechanism
+- [ ] Invite users mechanism
 - [ ] Send emails to invitees
 - [ ] Twitter bot for popular posts
 - [ ] Username limits

@@ -13,28 +13,10 @@
 
   <main>
     <section class="articles">
+      <h2><%= post.body %></h2>
       <ul class="comments-list">
-        <% posts.map(post => { %>
-        <li class="comments-list__article">
-          <div>
-            <div class="article-link">
-              <div class="article-link__main">
-                <%= post.body %>
-              </div>
-              <div class="article-link__home">
-              </div>
-            </div>
-            <div class="article-subtitle">
-              123 points by
-              <a href="#">
-                <%= post.username %></a>
-              <a href="#">
-                <%= post.created_at %></a>
-              |
-              <a href="#">report</a>
-            </div>
-          </div>
-        </li>
+        <% comments.map(comment => { %>
+        <%- include('./partials/single-comment', {comment, session}) %>
         <% }) %>
       </ul>
       <div class="new-post-link"><a href="/posts/<%= postId %>/comments/new">comment</a></div>
